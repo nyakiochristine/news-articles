@@ -4,7 +4,7 @@ class Sources:
     defines source objects
     '''
     
-def _init_(self,id,name,description,url,category,country,language,):
+def _init_(self,id,name,description,url,category,country,language):
     self.id = id
     self.name = name
     self.description = description
@@ -14,16 +14,17 @@ def _init_(self,id,name,description,url,category,country,language,):
     self.language = language
     
     
-    
-    
-    
-    
-    
-    
-    
+ 
     
 class Articles:
     '''
     defines articles objects
     '''  
-    
+def __init__(self,id,author,title,description,url,image,date):
+    self.id = id
+    self.author = author
+    self.title = title
+    self.description = description
+    self.url = url
+    self.image = image
+    self.date = date
