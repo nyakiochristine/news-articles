@@ -1,4 +1,4 @@
-from config import config
+from .config import Config
 import urllib.request,json
 from .models import Sources,Articles
 
@@ -21,4 +21,14 @@ def get_sources():
             
             sources_results= None
             
-           # if get_sources_response['sources ']
+            if get_sources_response['sources ']:
+                sources_results_list = get_sources_response['sources']
+                sources_results = process_resources(sources_results_list)
+                
+    return sources_results
+    
+def process_resources(sources_list):
+    '''
+    Function  that processes the sources list result and transform them to a list of Objects
+    '''
+    
