@@ -1,4 +1,4 @@
-from .config import Config
+#from .config import Config
 import urllib.request,json
 from .models import Sources,Articles
 
@@ -36,7 +36,7 @@ def process_resources(sources_list):
     Returns :
         sources_results: A list of source objects
     '''
-    return sources_results[]
+    source_results= []
     
     
     for source_item in sources_list:
@@ -54,3 +54,40 @@ def process_resources(sources_list):
             sources_results.append(source_object)
             
     return sources_results
+
+
+
+
+def get_articles():
+    '''
+    returns a list of articles objects
+    '''
+    with urllib.request.urlopen(articles_url +) as url:
+        articles_results = json.loads(url.read())
+        
+        
+        articles_object = None
+        if articles_results['articles']:
+            articles_object = articles_results['articles']
+            
+    return articles_object
+
+def process_articles(articles_list):
+    
+    articles_object = []
+    for article_item in articles_list:
+        id=article_item.get['id']
+        author=article_item.get['author']
+        title=article_item.get['title']
+        description=article_item.get['description']
+        url=article_item.get['url']
+        image=article_item.get['urlToImage']
+        date=article_item.get['publishedAt']
+        
+        if image:
+    		articles_result = Articles(id,author,title,description,url,image,date)
+			articles_object.append(articles_result)	
+    return articles_object
+		
+    
+    
