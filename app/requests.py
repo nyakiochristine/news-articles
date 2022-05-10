@@ -1,5 +1,5 @@
 #from .config import Config
-import urllib.request,json
+#import urllib.request,json
 from .models import Sources,Articles
 
 #get api key
@@ -62,7 +62,7 @@ def get_articles():
     '''
     returns a list of articles objects
     '''
-    with urllib.request.urlopen(articles_url +) as url:
+    with urllib.request.urlopen(articles_url) as url:
         articles_results = json.loads(url.read())
         
         
@@ -86,7 +86,7 @@ def process_articles(articles_list):
         
         if image:
     		articles_result = Articles(id,author,title,description,url,image,date)
-			articles_object.append(articles_result)	
+		articles_object.append(articles_result)	
     return articles_object
 		
     

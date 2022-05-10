@@ -14,7 +14,7 @@ def _init_(self,id,name,description,url,category,country,language):
     self.language = language
     
     
- 
+
     
 class Articles:
     '''
