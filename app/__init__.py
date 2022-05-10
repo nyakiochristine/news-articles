@@ -1,5 +1,7 @@
+from distutils import config
 from flask import Flask
-from app import app
+import app
+from config import DevConfig
 
 
 

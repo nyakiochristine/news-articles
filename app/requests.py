@@ -1,5 +1,5 @@
-#from .config import Config
-#import urllib.request,json
+from config import config_options
+import urllib.request,json
 from .models import Sources,Articles
 
 #get api key
@@ -85,9 +85,9 @@ def process_articles(articles_list):
         date=article_item.get['publishedAt']
         
         if image:
-    		articles_result = Articles(id,author,title,description,url,image,date)
+    	articles_result = Articles(id,author,title,description,url,image,date)
 		articles_object.append(articles_result)	
-    return articles_object
+        return articles_object
 		
     
     
