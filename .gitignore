@@ -1,2 +1,5 @@
-virtualll
+virttt/
+.env
+instance/
 *pyc
+*pyc/
