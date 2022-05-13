@@ -1,2 +1,55 @@
-<html>
-</html>
+{%extends 'base.html'%} {% block content %}
+
+<!-- styles block -->
+{% block styles %} {{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename= 'styles.css') }}">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.css">
+<link href="https://fonts.googleapis.com/css?family=Big+Shoulders+Text|Noto+Sans&display=swap" rel="stylesheet"> {% endblock %}
+
+<div class="container">
+    <h2 class="text-center animated slideInLeft">~Top Articles~</h2>
+    {% for article in articles |batch(4) %}
+    <div class="row">
+        {% for article in articles %}
+
+        <div class="col-md-3 ">
+            <div class="thumbnail box">
+                <a href="{{article.url}}" target="_blank"><img src="{{article.image}}" alt="{{article.title}}" class="img-responsive"></a>
+                <div class="caption">
+                    <h4><a href="{{article.url}}" target="_blank">{{ article.title |truncate(35) }}</a></h4>
+                    <p>{{ article.description | truncate(80) }}</p>
+                    <a href="{{ article.url }}" target="_blank">Read More</a>
+
+                </div>
+                <div class="footer">Published at:{{article.date}}
+
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% endfor %}
+    </div>
+    <style>
+        body {
+            background-color: black;
+            padding-top: 90px;
+        }
+        
+        h2 {
+            color: white;
+            font-size: 60px;
+            font-family: 'Big Shoulders Text', cursive;
+        }
+        
+        .container {
+            font-size: 20px;
+            font-family: 'Noto Sans', sans-serif;
+        }
+        
+        .box {
+            box-shadow: 0px 5px 10px #865C33;
+        }
+    </style>
+    
+    {% endblock %}

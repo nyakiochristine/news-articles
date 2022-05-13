@@ -4,7 +4,7 @@ class Sources:
     defines source objects
     '''
     
-def _init_(self,id,name,description,url,category,country,language):
+def __init__(self,id,name,description,url,category,country,language):
     self.id = id
     self.name = name
     self.description = description

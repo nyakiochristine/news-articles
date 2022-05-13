@@ -30,8 +30,6 @@ Select news articles for only a given site
 Select a category of the news they want to read.
 Search for specific source using the source id
 
-
-
 ## Installation Requirements
 
 To Run this app in your machine, you need to:

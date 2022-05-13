@@ -1,21 +1,22 @@
-from config import config_options
+from config import Config, SOURCES_BASE_URL,ARTICLES_BASE_URL,API_KEY
+
 import urllib.request,json
 from .models import Sources,Articles
 
 #get api key
-apiKey= None
+#api_key= None
 
 
-api_key = config.NEWS_API_KEY
-base_url = config.SOURCES_BASE_URL
-articles_url = config.ARTICLES_BASE_URL
+#api_key = Config.API_KEY
+#base_url = Config.SOURCES_BASE_URL
+#articles_url = Config.ARTICLES_BASE_URL
 
 
 def get_sources():
     '''
     getting json respo to urllib.request
     '''
-    with urllib.request.urlopen(get_sources_url) as url:
+    with urllib.request.urlopen(SOURCES_BASE_URL  +'1d71fbc2597a4dc5ae9f3f4afe384eee') as url:
             get_sources_data =url.read()
             get_sources_response = json.loads(get_sources_data)
             
@@ -51,9 +52,9 @@ def process_resources(sources_list):
         
         if url:
             source_object = Sources (id, name, description, url, category, country,language)
-            sources_results.append(source_object)
+            source_results.append(source_object)
             
-    return sources_results
+    return source_results
 
 
 
@@ -62,7 +63,7 @@ def get_articles():
     '''
     returns a list of articles objects
     '''
-    with urllib.request.urlopen(articles_url) as url:
+    with urllib.request.urlopen(ARTICLES_BASE_URL+'1d71fbc2597a4dc5ae9f3f4afe384eee') as url:
         articles_results = json.loads(url.read())
         
         
@@ -85,8 +86,8 @@ def process_articles(articles_list):
         date=article_item.get['publishedAt']
         
         if image:
-    	articles_result = Articles(id,author,title,description,url,image,date)
-		articles_object.append(articles_result)	
+            articles_result = Articles(id,author,title,description,url,image,date)
+            articles_object.append(articles_result)	
         return articles_object
 		
     
