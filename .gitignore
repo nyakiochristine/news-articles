@@ -3,3 +3,4 @@ virttt/
 instance/
 *pyc
 *pyc/
+.vscode/
