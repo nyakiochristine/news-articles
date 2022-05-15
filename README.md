@@ -36,9 +36,9 @@ To Run this app in your machine, you need to:
 
 - Open Terminal `Ctrl+Alt+T`
 
-- git clone `https://github.com/John-Njau/The-News-Hub.git`
+- git clone `https://github.com/nyakiochristine/news-articles.git`
 
-- `cd The-News-hub`
+- `cd news-articles`
 
 - `code . or atom .` based on the text editor you have to open and view the project.
 
@@ -65,8 +65,8 @@ This project is under the guidelines of [MIT License]
 
 ## Authors Info
 
-Github - [John Njau](https://github.com/nyakiochristine/)
+Github - [Nyakio Christine](https://github.com/nyakiochristine/)
 
-Email - [Johnnjaunjoroge@gmail.com](chrissymwangi254@gmail.com)
+Email - (chrissymwangi254@gmail.com)
 
 Copyright (c) 2022
